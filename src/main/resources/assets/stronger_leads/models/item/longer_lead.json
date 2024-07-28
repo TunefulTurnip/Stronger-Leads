@@ -1,0 +1,211 @@
+{
+  "parent": "item/generated",
+  "display": {
+    "head": {
+      "rotation": [0, 0, 0],
+      "translation": [2.75, -2.75, -6.5],
+      "scale": [0.8, 0.8, 0.8]
+    }
+  },
+  "overrides": [
+    {
+      "model": "stronger_leads:item/shorter_lead_3",
+      "predicate": {
+        "stronger_leads:length": -3,
+        "stronger_leads:strength": 0
+      }
+    },
+    {
+      "model": "stronger_leads:item/shorter_lead_3_reinforced_1",
+      "predicate": {
+        "stronger_leads:length": -3,
+        "stronger_leads:strength": 1
+      }
+    },
+    {
+      "model": "stronger_leads:item/shorter_lead_3_reinforced_2",
+      "predicate": {
+        "stronger_leads:length": -3,
+        "stronger_leads:strength": 2
+      }
+    },
+    {
+      "model": "stronger_leads:item/shorter_lead_3_reinforced_3",
+      "predicate": {
+        "stronger_leads:length": -3,
+        "stronger_leads:strength": 3
+      }
+    },
+    {
+      "model": "stronger_leads:item/shorter_lead_2",
+      "predicate": {
+        "stronger_leads:length": -2,
+        "stronger_leads:strength": 0
+      }
+    },
+    {
+      "model": "stronger_leads:item/shorter_lead_2_reinforced_1",
+      "predicate": {
+        "stronger_leads:length": -2,
+        "stronger_leads:strength": 1
+      }
+    },
+    {
+      "model": "stronger_leads:item/shorter_lead_2_reinforced_2",
+      "predicate": {
+        "stronger_leads:length": -2,
+        "stronger_leads:strength": 2
+      }
+    },
+    {
+      "model": "stronger_leads:item/shorter_lead_2_reinforced_3",
+      "predicate": {
+        "stronger_leads:length": -2,
+        "stronger_leads:strength": 3
+      }
+    },
+    {
+      "model": "stronger_leads:item/shorter_lead_1",
+      "predicate": {
+        "stronger_leads:length": -1,
+        "stronger_leads:strength": 0
+      }
+    },
+    {
+      "model": "stronger_leads:item/shorter_lead_1_reinforced_1",
+      "predicate": {
+        "stronger_leads:length": -1,
+        "stronger_leads:strength": 1
+      }
+    },
+    {
+      "model": "stronger_leads:item/shorter_lead_1_reinforced_2",
+      "predicate": {
+        "stronger_leads:length": -1,
+        "stronger_leads:strength": 2
+      }
+    },
+    {
+      "model": "stronger_leads:item/shorter_lead_1_reinforced_3",
+      "predicate": {
+        "stronger_leads:length": -1,
+        "stronger_leads:strength": 3
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_1",
+      "predicate": {
+        "stronger_leads:length": 1,
+        "stronger_leads:strength": 0
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_1_reinforced_1",
+      "predicate": {
+        "stronger_leads:length": 1,
+        "stronger_leads:strength": 1
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_1_reinforced_2",
+      "predicate": {
+        "stronger_leads:length": 1,
+        "stronger_leads:strength": 2
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_1_reinforced_3",
+      "predicate": {
+        "stronger_leads:length": 1,
+        "stronger_leads:strength": 3
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_2",
+      "predicate": {
+        "stronger_leads:length": 2,
+        "stronger_leads:strength": 0
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_2_reinforced_1",
+      "predicate": {
+        "stronger_leads:length": 2,
+        "stronger_leads:strength": 1
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_2_reinforced_2",
+      "predicate": {
+        "stronger_leads:length": 2,
+        "stronger_leads:strength": 2
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_2_reinforced_3",
+      "predicate": {
+        "stronger_leads:length": 2,
+        "stronger_leads:strength": 3
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_3",
+      "predicate": {
+        "stronger_leads:length": 3,
+        "stronger_leads:strength": 0
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_3_reinforced_1",
+      "predicate": {
+        "stronger_leads:length": 3,
+        "stronger_leads:strength": 1
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_3_reinforced_2",
+      "predicate": {
+        "stronger_leads:length": 3,
+        "stronger_leads:strength": 2
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_3_reinforced_3",
+      "predicate": {
+        "stronger_leads:length": 3,
+        "stronger_leads:strength": 3
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_4",
+      "predicate": {
+        "stronger_leads:length": 4,
+        "stronger_leads:strength": 0
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_4_reinforced_1",
+      "predicate": {
+        "stronger_leads:length": 4,
+        "stronger_leads:strength": 1
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_4_reinforced_2",
+      "predicate": {
+        "stronger_leads:length": 4,
+        "stronger_leads:strength": 2
+      }
+    },
+    {
+      "model": "stronger_leads:item/longer_lead_4_reinforced_3",
+      "predicate": {
+        "stronger_leads:length": 4,
+        "stronger_leads:strength": 3
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "item/lead"
+  }
+}

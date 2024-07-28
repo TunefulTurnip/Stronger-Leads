@@ -1,0 +1,6 @@
+{
+  "parent": "stronger_leads:item/lead_base_model",
+  "textures": {
+    "layer0": "stronger_leads:item/longer_lead_3"
+  }
+}

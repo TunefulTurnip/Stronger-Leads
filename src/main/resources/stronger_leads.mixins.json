@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.tunefulturnip.strongerleads.mixin",
+  "minVersion": "0.8.4",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "stronger_leads.refmap.json",
+  "mixins": [
+    "EntityMixin",
+    "LeashableMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

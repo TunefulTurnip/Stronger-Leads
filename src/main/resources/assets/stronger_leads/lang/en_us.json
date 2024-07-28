@@ -1,0 +1,13 @@
+{
+  "item.stronger_leads.lead_max_length" : "Max Lead Length",
+  "item.stronger_leads.lead_max_constrain" : "Max Lead Constrain",
+  "item.stronger_leads.longer_lead0" : "Lead",
+  "item.stronger_leads.longer_lead1" : "Slightly Longer Lead",
+  "item.stronger_leads.longer_lead2" : "Long Lead",
+  "item.stronger_leads.longer_lead3" : "Very Long Lead",
+  "item.stronger_leads.longer_lead4" : "Extremely Long Lead",
+  "item.stronger_leads.longer_lead-1" : "Slightly Shorter Lead",
+  "item.stronger_leads.longer_lead-2" : "Short Lead",
+  "item.stronger_leads.longer_lead-3" : "Very Short Lead",
+  "item.stronger_leads.reinforced" : "Reinforced "
+}
