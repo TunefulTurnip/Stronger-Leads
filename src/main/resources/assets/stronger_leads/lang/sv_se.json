@@ -1,0 +1,13 @@
+{
+  "item.stronger_leads.lead_max_length" : "Koppel elastisk längd",
+  "item.stronger_leads.lead_max_constrain" : "Koppel max längd",
+  "item.stronger_leads.longer_lead0" : "Koppel",
+  "item.stronger_leads.longer_lead1" : "Lite längre Koppel",
+  "item.stronger_leads.longer_lead2" : "Långt Koppel",
+  "item.stronger_leads.longer_lead3" : "Väldigt långt koppel",
+  "item.stronger_leads.longer_lead4" : "Extremt långt koppel",
+  "item.stronger_leads.longer_lead-1" : "Lite kortare koppel",
+  "item.stronger_leads.longer_lead-2" : "Kort koppel",
+  "item.stronger_leads.longer_lead-3" : "Väldigt kort loppel",
+  "item.stronger_leads.reinforced" : "Förstärkt "
+}

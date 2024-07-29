@@ -5,16 +5,14 @@ import com.tunefulturnip.strongerleads.item.component.LeadRecord;
 import com.tunefulturnip.strongerleads.item.component.StrongerLeadsDataComponents;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+import org.jetbrains.annotations.NotNull;
 
 public class StrongerLeadCrafting extends CustomRecipe {
 
@@ -23,7 +21,7 @@ public class StrongerLeadCrafting extends CustomRecipe {
     }
 
     @Override
-    public boolean matches(CraftingInput input, Level level) {
+    public boolean matches(CraftingInput input, @NotNull Level level) {
         int leadCount = 0;
         int stringCount = 0;
         int maxStringCount = 4;
@@ -65,14 +63,16 @@ public class StrongerLeadCrafting extends CustomRecipe {
                 }
             }
         }
-
+        if(leadCount != 1)
+            return false;
         if(stringCount < 1 && sheerCount < 1 && ironCount < 1)
             return false;
         else return stringCount <= maxStringCount && sheerCount <= maxSheerCount && ironCount <= maxIronCount;
     }
 
     @Override
-    public ItemStack assemble(CraftingInput input, HolderLookup.Provider provider) {
+    @NotNull
+    public ItemStack assemble(CraftingInput input, HolderLookup.@NotNull Provider provider) {
         boolean isLead = false;
         int isSheer = 1;
         int count = 0;
@@ -82,37 +82,32 @@ public class StrongerLeadCrafting extends CustomRecipe {
 
 
         for (int i = 0; i < input.size(); i++) {
-            ItemStack itemstack1 = input.getItem(i);
-            if (!itemstack1.isEmpty()) {
-                if (itemstack1.is(StrongerLeadsItems.LONGER_LEAD)) {
-                    itemstack = itemstack1;
-                }
-                else if (itemstack1.is(Items.LEAD)) {
-                    itemstack = itemstack1;
+            ItemStack inputItemStack = input.getItem(i);
+            if (!inputItemStack.isEmpty()) {
+                if (inputItemStack.is(StrongerLeadsItems.LONGER_LEAD)) {
+                    itemstack = inputItemStack;
+                } else if (inputItemStack.is(Items.LEAD)) {
+                    itemstack = inputItemStack;
                     isLead = true;
-                }
-                else if(itemstack1.is(Items.STRING)) {
+                } else if (inputItemStack.is(Items.STRING)) {
                     count++;
-                }
-                else if(itemstack1.is(Items.SHEARS)) {
+                } else if (inputItemStack.is(Items.SHEARS)) {
                     count++;
                     isSheer = -1;
-                }
-                else if(itemstack1.is(Items.IRON_INGOT))
+                } else if (inputItemStack.is(Items.IRON_INGOT))
                     ironCount++;
             }
         }
 
-        if(isLead || !itemstack.has(StrongerLeadsDataComponents.LEAD)) {
+        LeadRecord record = itemstack.get(StrongerLeadsDataComponents.LEAD);
+        if (isLead || !itemstack.has(StrongerLeadsDataComponents.LEAD) || record == null) {
             ItemStack newStack = new ItemStack(StrongerLeadsItems.LONGER_LEAD.get(), 1);
             newStack.set(StrongerLeadsDataComponents.LEAD, new LeadRecord((byte) ironCount, (byte) (count * isSheer)));
             return newStack;
-        }
-        else {
-            LeadRecord record = itemstack.get(StrongerLeadsDataComponents.LEAD);
+        } else {
             byte newLength = (byte) (record.length() + (count * isSheer));
 
-            if(newLength == 0)
+            if (newLength == 0)
                 return new ItemStack(Items.LEAD, 1);
             else {
                 ItemStack newStack = new ItemStack(StrongerLeadsItems.LONGER_LEAD.get(), 1);
@@ -123,6 +118,7 @@ public class StrongerLeadCrafting extends CustomRecipe {
     }
 
     @Override
+    @NotNull
     public NonNullList<ItemStack> getRemainingItems(CraftingInput pInput) {
         NonNullList<ItemStack> nonnulllist = NonNullList.withSize(pInput.size(), ItemStack.EMPTY);
 
@@ -150,12 +146,14 @@ public class StrongerLeadCrafting extends CustomRecipe {
     }
 
     @Override
+    @NotNull
     public RecipeSerializer<?> getSerializer() {
         return StrongerLeadsRecipeSerializer.STRONGER_LEADS_CRAFTING.get();
     }
 
     @Override
-    public ItemStack getResultItem(HolderLookup.Provider pRegistries) {
+    @NotNull
+    public ItemStack getResultItem(HolderLookup.@NotNull Provider pRegistries) {
         return super.getResultItem(pRegistries);
     }
 }

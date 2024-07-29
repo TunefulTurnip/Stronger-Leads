@@ -48,7 +48,7 @@ public interface LeashableMixin {
 
     @WrapWithCondition(method = "restoreLeashFromSave",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;spawnAtLocation(Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/world/entity/item/ItemEntity;"))
-    private static <E extends Entity & Leashable> boolean restoreLeashFromSave(Entity instance, ItemLike pItem) {
+    private static boolean restoreLeashFromSave(Entity instance, ItemLike pItem) {
         if (instance.hasData(StrongerLeadsAttachment.LEASH_LENGTH)) {
             ItemStack stack = new ItemStack(StrongerLeadsItems.LONGER_LEAD.get(), 1);
             stack.set(StrongerLeadsDataComponents.LEAD, new LeadRecord(instance.getData(StrongerLeadsAttachment.LEASH_STRENGTH), instance.getData(StrongerLeadsAttachment.LEASH_LENGTH)));
@@ -62,7 +62,7 @@ public interface LeashableMixin {
 
     @WrapWithCondition(method = "dropLeash(Lnet/minecraft/world/entity/Entity;ZZ)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;spawnAtLocation(Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/world/entity/item/ItemEntity;"))
-    private static <E extends Entity & Leashable> boolean dropLeash(Entity instance, ItemLike pItem) {
+    private static boolean dropLeash(Entity instance, ItemLike pItem) {
         if (instance.hasData(StrongerLeadsAttachment.LEASH_LENGTH)) {
             ItemStack stack = new ItemStack(StrongerLeadsItems.LONGER_LEAD.get(), 1);
             stack.set(StrongerLeadsDataComponents.LEAD, new LeadRecord(instance.getData(StrongerLeadsAttachment.LEASH_STRENGTH), instance.getData(StrongerLeadsAttachment.LEASH_LENGTH)));

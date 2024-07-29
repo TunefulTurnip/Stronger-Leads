@@ -1,6 +1,5 @@
 package com.tunefulturnip.strongerleads.mixin;
 
-import com.llamalad7.mixinextras.sugar.Local;
 import com.tunefulturnip.strongerleads.StrongerLeadsAttachment;
 import com.tunefulturnip.strongerleads.item.StrongerLeadsItems;
 import com.tunefulturnip.strongerleads.item.component.LeadRecord;
@@ -11,7 +10,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Leashable;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import org.spongepowered.asm.mixin.Mixin;

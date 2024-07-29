@@ -20,6 +20,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -30,6 +31,7 @@ public class StrongerLeadItem extends LeadItem {
     }
 
     @Override
+    @NotNull
     public InteractionResult useOn(UseOnContext pContext) {
         Level level = pContext.getLevel();
         BlockPos blockpos = pContext.getClickedPos();
@@ -46,12 +48,12 @@ public class StrongerLeadItem extends LeadItem {
         }
     }
 
-    public static InteractionResult bindPlayerMobs(Player pPlayer, Level pLevel, BlockPos pPos, ItemStack stack) {
+    public static void bindPlayerMobs(Player pPlayer, Level pLevel, BlockPos pPos, ItemStack stack) {
         LeashFenceKnotEntity leashfenceknotentity = null;
         List<Entity> list = entitiesInArea(pLevel, pPos, p_353025_ -> p_353025_.getLeashHolder() == pPlayer);
 
         LeadRecord record = stack.get(StrongerLeadsDataComponents.LEAD);
-        if(record == null) return InteractionResult.PASS;
+        if(record == null) return;
 
         for (Entity leashable : list) {
             if (leashfenceknotentity == null) {
@@ -65,12 +67,8 @@ public class StrongerLeadItem extends LeadItem {
             ((Leashable) leashable).setLeashedTo(leashfenceknotentity, true);
         }
 
-        if (!list.isEmpty()) {
+        if (!list.isEmpty())
             pLevel.gameEvent(GameEvent.BLOCK_ATTACH, pPos, GameEvent.Context.of(pPlayer));
-            return InteractionResult.SUCCESS;
-        } else {
-            return InteractionResult.PASS;
-        }
     }
 
     public static List<Entity> entitiesInArea(Level level, BlockPos pos, Predicate<Leashable> predicate) {
@@ -82,7 +80,7 @@ public class StrongerLeadItem extends LeadItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+    public void appendHoverText(ItemStack pStack, @NotNull TooltipContext pContext, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pTooltipFlag) {
         if(pStack.has(StrongerLeadsDataComponents.LEAD)) {
             LeadRecord lead = pStack.get(StrongerLeadsDataComponents.LEAD);
             if(lead == null) return;
@@ -97,6 +95,7 @@ public class StrongerLeadItem extends LeadItem {
     }
 
     @Override
+    @NotNull
     public Component getName(ItemStack pStack) {
         LeadRecord lead = pStack.get(StrongerLeadsDataComponents.LEAD);
         if(lead != null) {

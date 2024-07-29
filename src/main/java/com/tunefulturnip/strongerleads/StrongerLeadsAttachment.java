@@ -1,7 +1,6 @@
 package com.tunefulturnip.strongerleads;
 
 import com.mojang.serialization.Codec;
-import com.tunefulturnip.strongerleads.StrongerLeadsMod;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
