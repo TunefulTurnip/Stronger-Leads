@@ -1,6 +1,6 @@
 {
-  "item.stronger_leads.lead_max_length" : "Max Elastic Lead Length",
-  "item.stronger_leads.lead_max_constrain" : "Max Lead Length",
+  "item.stronger_leads.lead_max_length" : "Max Lead Length",
+  "item.stronger_leads.lead_max_constrain" : "Max Lead Constrain",
   "item.stronger_leads.longer_lead0" : "Lead",
   "item.stronger_leads.longer_lead1" : "Slightly Longer Lead",
   "item.stronger_leads.longer_lead2" : "Long Lead",

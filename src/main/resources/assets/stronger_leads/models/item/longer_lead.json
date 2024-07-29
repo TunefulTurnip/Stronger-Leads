@@ -1,5 +1,5 @@
 {
-  "parent": "item/generated",
+  "parent": "stronger_leads:item/lead_base_model",
   "display": {
     "head": {
       "rotation": [0, 0, 0],

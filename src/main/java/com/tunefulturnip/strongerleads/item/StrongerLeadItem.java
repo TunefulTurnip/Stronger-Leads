@@ -75,7 +75,7 @@ public class StrongerLeadItem extends LeadItem {
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
-        AABB aabb = new AABB((double)x - 7.0, (double)y - 7.0, (double)z - 7.0, (double)x + 7.0, (double)y + 7.0, (double)z + 7.0);
+        AABB aabb = new AABB((double)x - 7.0, (double)y - 13.0, (double)z - 7.0, (double)x + 7.0, (double)y + 13.0, (double)z + 7.0);
         return level.getEntitiesOfClass(Entity.class, aabb, entity -> entity instanceof Leashable leashable && predicate.test(leashable));
     }
 

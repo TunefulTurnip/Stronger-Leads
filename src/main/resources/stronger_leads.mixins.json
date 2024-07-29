@@ -6,6 +6,7 @@
   "refmap": "stronger_leads.refmap.json",
   "mixins": [
     "EntityMixin",
+    "LeadItemMixin",
     "LeashableMixin"
   ],
   "client": [
