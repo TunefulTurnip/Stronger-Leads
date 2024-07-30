@@ -32,7 +32,7 @@ public interface LeashableMixin {
             if (leashLength < -5)
                 leashLength = -5;
 
-            if (f > 10.0F + (pEntity.getData(StrongerLeadsAttachment.LEASH_STRENGTH) + leashLength)) {
+            if (f > 10.0F + ((pEntity.getData(StrongerLeadsAttachment.LEASH_STRENGTH) * 2) + leashLength)) {
                 pEntity.leashTooFarBehaviour();
                 pEntity.removeData(StrongerLeadsAttachment.LEASH_LENGTH);
                 pEntity.removeData(StrongerLeadsAttachment.LEASH_STRENGTH);

@@ -93,6 +93,27 @@
       }
     },
     {
+      "model": "stronger_leads:item/lead_0_reinforced_1",
+      "predicate": {
+        "stronger_leads:length": 0,
+        "stronger_leads:strength": 1
+      }
+    },
+    {
+      "model": "stronger_leads:item/lead_0_reinforced_2",
+      "predicate": {
+        "stronger_leads:length": 0,
+        "stronger_leads:strength": 2
+      }
+    },
+    {
+      "model": "stronger_leads:item/lead_0_reinforced_3",
+      "predicate": {
+        "stronger_leads:length": 0,
+        "stronger_leads:strength": 3
+      }
+    },
+    {
       "model": "stronger_leads:item/longer_lead_1",
       "predicate": {
         "stronger_leads:length": 1,

@@ -73,13 +73,10 @@ public class StrongerLeadCrafting extends CustomRecipe {
     @Override
     @NotNull
     public ItemStack assemble(CraftingInput input, HolderLookup.@NotNull Provider provider) {
-        boolean isLead = false;
         int isSheer = 1;
         int count = 0;
         int ironCount = 0;
         ItemStack itemstack = ItemStack.EMPTY;
-        //List<ItemStack> shears = new ArrayList<>();
-
 
         for (int i = 0; i < input.size(); i++) {
             ItemStack inputItemStack = input.getItem(i);
@@ -88,7 +85,6 @@ public class StrongerLeadCrafting extends CustomRecipe {
                     itemstack = inputItemStack;
                 } else if (inputItemStack.is(Items.LEAD)) {
                     itemstack = inputItemStack;
-                    isLead = true;
                 } else if (inputItemStack.is(Items.STRING)) {
                     count++;
                 } else if (inputItemStack.is(Items.SHEARS)) {
@@ -100,14 +96,16 @@ public class StrongerLeadCrafting extends CustomRecipe {
         }
 
         LeadRecord record = itemstack.get(StrongerLeadsDataComponents.LEAD);
-        if (isLead || !itemstack.has(StrongerLeadsDataComponents.LEAD) || record == null) {
+        if (record == null) {
             ItemStack newStack = new ItemStack(StrongerLeadsItems.LONGER_LEAD.get(), 1);
             newStack.set(StrongerLeadsDataComponents.LEAD, new LeadRecord((byte) ironCount, (byte) (count * isSheer)));
             return newStack;
         } else {
             byte newLength = (byte) (record.length() + (count * isSheer));
 
-            if (newLength == 0)
+            byte newStrength = (byte) (record.strength() + ironCount);
+
+            if (newLength == 0 && newStrength == 0)
                 return new ItemStack(Items.LEAD, 1);
             else {
                 ItemStack newStack = new ItemStack(StrongerLeadsItems.LONGER_LEAD.get(), 1);

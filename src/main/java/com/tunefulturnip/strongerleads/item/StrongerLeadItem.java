@@ -90,7 +90,7 @@ public class StrongerLeadItem extends LeadItem {
                 leashLength = -5;
 
             pTooltipComponents.add(Component.literal((6+leashLength) + " ").append(Component.translatable("item.stronger_leads.lead_max_length")).withStyle(ChatFormatting.BLUE));
-            pTooltipComponents.add(Component.literal((10 + (lead.strength() + leashLength)) + " ").append(Component.translatable("item.stronger_leads.lead_max_constrain")).withStyle(ChatFormatting.BLUE));
+            pTooltipComponents.add(Component.literal((10 + ((lead.strength() * 2) + leashLength)) + " ").append(Component.translatable("item.stronger_leads.lead_max_constrain")).withStyle(ChatFormatting.BLUE));
         }
     }
 
