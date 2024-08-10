@@ -6,15 +6,25 @@ import org.apache.commons.lang3.tuple.Pair;
 public class StrongerLeadsConfig {
 
     public static class Common {
-        public final ModConfigSpec.ConfigValue<Integer> maxUpgradeLevel;
+        public final ModConfigSpec.ConfigValue<Integer> maxLengthUpgradeLevel;
+        public final ModConfigSpec.ConfigValue<Integer> maxConstrainUpgradeLevel;
         public Common(ModConfigSpec.Builder builder) {
 
             builder.push("general");
-            maxUpgradeLevel = builder
-                    .comment("The maximum number of times a lead can be upgraded")
-                    .translation("config.stronger_leads.max_upgrade_level")
-                    .define("Max Upgrade Level", 5);
+            maxLengthUpgradeLevel = builder
+                    .comment("The maximum number of times a lead's length can be upgraded. Requires a custom resource pack in order to work properly.")
+                    .translation("config.stronger_leads.max_length_upgrade_level")
+                    .define("Max Length Upgrade Level", 4);
             builder.pop();
+
+            builder.push("general");
+            maxConstrainUpgradeLevel = builder
+                    .comment("The maximum number of times a lead's constrain can be upgraded. Requires a custom resource pack in order to work properly.")
+                    .translation("config.stronger_leads.max_constrain_upgrade_level")
+                    .define("Max Constrain Upgrade Level", 3);
+            builder.pop();
+
+
         }
     }
 

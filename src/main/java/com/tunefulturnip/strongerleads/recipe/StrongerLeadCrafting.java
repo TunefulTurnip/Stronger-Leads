@@ -1,5 +1,6 @@
 package com.tunefulturnip.strongerleads.recipe;
 
+import com.tunefulturnip.strongerleads.StrongerLeadsConfig;
 import com.tunefulturnip.strongerleads.item.StrongerLeadsItems;
 import com.tunefulturnip.strongerleads.item.component.LeadRecord;
 import com.tunefulturnip.strongerleads.item.component.StrongerLeadsDataComponents;
@@ -24,11 +25,11 @@ public class StrongerLeadCrafting extends CustomRecipe {
     public boolean matches(CraftingInput input, @NotNull Level level) {
         int leadCount = 0;
         int stringCount = 0;
-        int maxStringCount = 4;
+        int maxStringCount = StrongerLeadsConfig.COMMON.maxLengthUpgradeLevel.get();
         int sheerCount = 0;
         int maxSheerCount = 3;
         int ironCount = 0;
-        int maxIronCount = 3;
+        int maxIronCount = StrongerLeadsConfig.COMMON.maxConstrainUpgradeLevel.get();
 
         for (int k = 0; k < input.size(); k++) {
             ItemStack itemstack = input.getItem(k);
@@ -37,9 +38,9 @@ public class StrongerLeadCrafting extends CustomRecipe {
                     leadCount++;
                     LeadRecord lead = itemstack.get(StrongerLeadsDataComponents.LEAD);
                     if(lead != null) {
-                        maxStringCount = 4 - lead.length();
+                        maxStringCount = StrongerLeadsConfig.COMMON.maxLengthUpgradeLevel.get() - lead.length();
                         maxSheerCount = 3 + lead.length();
-                        maxIronCount = 3 - lead.strength();
+                        maxIronCount = StrongerLeadsConfig.COMMON.maxConstrainUpgradeLevel.get() - lead.strength();
                     }
                 }
                 else if(itemstack.is(Items.LEAD)) {
